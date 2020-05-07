@@ -75,16 +75,19 @@
 
 ### AngularJS
 
+- [公式](https://angular.jp/)
 - `Google` が開発した Web アプリケーションフレームワーク
 - HTML ファイルと JavaScript(TypeScript)ファイルを分割して実装する
 
 ### Vue.js
 
+- [公式](https://jp.vuejs.org/index.html)
 - オープンソースの UI 開発フレームワーク
 - HTML ファイル内に JavaScript を実装する
 
 ### React
 
+- [公式](https://ja.reactjs.org/)
 - `Facebook` が開発した UI 開発に特化したライブラリ
 - JavaScript ファイル 内に HTML を実装する仕様
 - 今回はこの React を用いてハンズオンを行います
