@@ -266,7 +266,7 @@ console.log(newArray);
 const user1 = { name: "hirai" };
 
 // カンマ区切りで複数の値を設定できる
-const user2 = { name: "hirai", age: 24, dept: "デジタルプロデュース部" };
+const user2 = { name: "hirai", age: 24, height: "173cm" };
 ```
 
 #### オブジェクトの使い方
