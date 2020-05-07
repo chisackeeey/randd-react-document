@@ -46,18 +46,24 @@
 
 ```jsx
 // Menuコンポーネント
-const Menu = () => <h1>This is Menu</h1>;
+function Menu() {
+  return <h1>This is Menu</h1>;
+}
 
 // Contentsコンポーネント
-const Contents = ({ title }) => <p>Today Contents is {title}</p>;
+function Contents({ title }) {
+  return <p>Today Contents is {title}</p>;
+}
 
 // 上記2つのコンポーネントを使用している
-const App = () => (
-  <div>
-    <Menu />
-    <Contents title="React" />
-  </div>
-);
+function App() {
+  return (
+    <div>
+      <Menu />
+      <Contents title="React" />
+    </div>
+  );
+}
 
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
