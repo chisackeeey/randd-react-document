@@ -17,7 +17,7 @@
 - コードが読みやすく、デバッグが容易である
 
   ```jsx
-  class ClickMe extends Component {
+  function ClickMe() {
     // state = 状態の宣言
     constructor(props) {
       super(props);
