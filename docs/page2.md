@@ -19,19 +19,16 @@
   ```jsx
   function ClickMe() {
     // state = 状態の宣言
-    constructor(props) {
-      super(props);
-      this.state = { message: "Click me" };
-    }
+    const [message, setMessage] = useState("Click me!");
 
     // クリック時の挙動を定義
-    onClick = () => this.setState({ message: "Clicked!" });
+    const onClick = () => setMessage("Clicked!");
 
     render() {
       // 宣言的に記述する。state が更新されると自動的に再描画する。
       return (
         <div>
-          <p onClick={this.onClick}>{this.state.message}</p>
+          <p onClick={onClick()}>{message}</p>
         </div>
       );
     }
