@@ -103,35 +103,6 @@ name = "ozaki"; // エラーにならない
 - 基本的には `const`で宣言する
 - 再代入が必要な場合に限り`let`で宣言する
 
-### クラス
-
-#### クラスの定義
-
-- クラスの定義は`class`キーワードを使う
-
-```jsx
-class Person {
-  // ...
-}
-
-const person = new Person();
-```
-
-#### メソッドの定義
-
-- メソッドの定義は以下のように行う
-
-```jsx
-class Person {
-  hello() {
-    console.log("Hello");
-  }
-}
-
-const person = new Person();
-person.hello(); // Hello
-```
-
 ### 関数
 
 - `function` を使った書き方と`アロー関数`を使った書き方がある
