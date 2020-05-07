@@ -73,7 +73,7 @@
 - SPA を構築するための JavaScript のフレームワークは多く存在する
 - 現在の主流は以下の 3 つ
 
-### AngularJS
+### Angular
 
 - [公式](https://angular.jp/)
 - `Google` が開発した Web アプリケーションフレームワーク
