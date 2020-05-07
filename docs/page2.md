@@ -94,7 +94,7 @@ name = "ozaki"; // エラー
 - `let` で宣言した変数は再代入が可能
 
 ```jsx
-const name = "hirai";
+let name = "hirai";
 name = "ozaki"; // エラーにならない
 ```
 
