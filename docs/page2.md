@@ -6,6 +6,36 @@
   - `Facebook` が開発
   - `Yahoo!`や `Airbnb` など多くの企業で採用されている
   - UI 開発に特化している
+  - `JSX`という JavaScript の拡張言語を採用している
+
+### JSX とは
+
+- JSX とは React の UI を html ライクに記述するためのライブラリ
+
+  - React では以下の様にコンポーネントを作成する
+
+  ```js
+  const Hello = () => (
+  React.createElement('div', null, [
+    React.createElement('h1', { className: 'hello-world' }, 'Hello World'),
+    React.createElement('p', { id: 'hello' }, 'Hello Hello Hello!'),
+  ]);
+  );
+  ```
+
+  - JSX を用いると同じコンポーネントを以下の様に作成することができる
+
+  ```js
+  const Hello = () => (
+    <div>
+      <h1 className="hello-world">Hello World</h1>;
+      <p id="hello">Hello Hello Hello!</p>
+    </div>
+  );
+  ```
+
+  - 実際には内部的に上の例と同じ様に変換されている
+  - html ライクな形式を用いることでより直感的で見慣れた形式で記述することができる
 
 ## React のコンセプト
 
@@ -418,4 +448,8 @@ function App() {
 }
 
 export default App;
+```
+
+```
+
 ```
