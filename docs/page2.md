@@ -28,7 +28,7 @@
       // 宣言的に記述する。state が更新されると自動的に再描画する。
       return (
         <div>
-          <p onClick={onClick()}>{message}</p>
+          <p onClick={onClick}>{message}</p>
         </div>
       );
     }
@@ -47,9 +47,9 @@ function Menu() {
   return <h1>This is Menu</h1>;
 }
 
-// Contentsコンポーネント
-function Contents({ title }) {
-  return <p>Today Contents is {title}</p>;
+// Contentコンポーネント
+function Content({ title }) {
+  return <p>Today Content is {title}</p>;
 }
 
 // 上記2つのコンポーネントを使用している
@@ -57,7 +57,7 @@ function App() {
   return (
     <div>
       <Menu />
-      <Contents title="React" />
+      <Content title="React" />
     </div>
   );
 }
@@ -145,6 +145,30 @@ const add = function add(x, y) {
 add(1, 2); // 3
 ```
 
+- 関数を変数に格納することもできる
+
+```jsx
+// 関数の定義
+const add = function add(x, y) {
+  return x + y;
+};
+
+// 変数に入れた場合も同じように呼び出せる
+add(1, 2); // 3
+```
+
+- 変数に入れる場合は`function`の後ろの関数名を省略しても同様の動きとなる
+
+```jsx
+// 関数の定義
+const add = function(x, y) {
+  return x + y;
+};
+
+// 変数に入れた場合も同じように呼び出せる
+add(1, 2); // 3
+```
+
 #### アロー関数
 
 - `function`というキーワードを省略した新しい書き方
@@ -167,6 +191,22 @@ const add = (x, y) => {
 
 // 関数を呼び出す
 add(1, 2); // 3
+```
+
+- 処理が一行だけの場合や丸括弧をつける場合は以下のように`return`を省略して書くこともできる
+
+```jsx
+// 処理が一行だけの場合
+const add = (x, y) => x + y;
+
+// 丸括弧をつける場合
+const multiply = (x, y) => (
+  x * y;
+);
+
+// 関数を呼び出す
+add(1, 2); // 3
+multiply(1, 2); // 2
 ```
 
 - 引数が 1 つの場合は()を省略できる
@@ -279,13 +319,22 @@ const user2 = { name: "hirai", age: 24, height: "173cm" };
 - 以下の 2 パターンどちらでも可能
 
 ```jsx
-const user = { name: "hirai" };
+const user = { name: "hirai", age: 24 };
+const name = user.name; // 取り出し方1
+const age = user["age"]; // 取り出し方2
 
-// 取り出し方1
-console.log(user.name); // hirai
+console.log(name); // hirai
+console.log(age); // 24
+```
 
-// 取り出し方2
-console.log(user["name"]); // hirai
+- 以下の様に省略することも可能
+
+```jsx
+const user = { name: "hirai", age: 24 };
+const { name, age } = user;
+
+console.log(name); // hirai
+console.log(age); // 24
 ```
 
 ##### 値を追加する
@@ -295,12 +344,29 @@ console.log(user["name"]); // hirai
 ```jsx
 // 空っぽのオブジェクト
 const user = {};
+user.name = "hirai"; // 追加の仕方1
+user["age"] = 24; // 追加の仕方2
 
-// 追加の仕方1
-user.name = "hirai";
+console.log(user); // {name: "hirai", age: 24}
+```
 
-// 追加の仕方2
-user["name"] = "hirai";
+- 変数の宣言時に定義することも可能
+
+```jsx
+const user = { name: "hirai", age: 24 };
+
+console.log(user); // {name: "hirai", age: 24}
+```
+
+- オブジェクトの key 名と代入する変数名が同じ場合、以下の様に省略することも可能
+
+```jsx
+const name = "hirai";
+const age = 24;
+// const user = { name: name, age: age } と同じ意味
+const user = { name, age };
+
+console.log(user); // {name: "hirai", age: 24}
 ```
 
 ### 三項演算子
