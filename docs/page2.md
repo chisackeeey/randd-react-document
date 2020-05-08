@@ -14,24 +14,26 @@
 
   - React では以下の様にコンポーネントを作成する
 
-  ```js
-  const Hello = () => (
-  React.createElement('div', null, [
-    React.createElement('h1', { className: 'hello-world' }, 'Hello World'),
-    React.createElement('p', { id: 'hello' }, 'Hello Hello Hello!'),
-  ]);
-  );
+  ```jsx
+  function Hello() {
+    return React.createElement("div", null, [
+      React.createElement("h1", { className: "hello-world" }, "Hello World"),
+      React.createElement("p", { id: "hello" }, "Hello Hello Hello!"),
+    ]);
+  }
   ```
 
   - JSX を用いると同じコンポーネントを以下の様に作成することができる
 
-  ```js
-  const Hello = () => (
-    <div>
-      <h1 className="hello-world">Hello World</h1>;
-      <p id="hello">Hello Hello Hello!</p>
-    </div>
-  );
+  ```jsx
+  function Hello() {
+    return (
+      <div>
+        <h1 className="hello-world">Hello World</h1>;
+        <p id="hello">Hello Hello Hello!</p>
+      </div>
+    );
+  }
   ```
 
   - 実際には内部的に上の例と同じ様に変換されている
@@ -54,14 +56,12 @@
     // クリック時の挙動を定義
     const onClick = () => setMessage("Clicked!");
 
-    render() {
-      // 宣言的に記述する。state が更新されると自動的に再描画する。
-      return (
-        <div>
-          <p onClick={onClick}>{message}</p>
-        </div>
-      );
-    }
+    // 宣言的に記述する。state が更新されると自動的に再描画する。
+    return (
+      <div>
+        <p onClick={onClick}>{message}</p>
+      </div>
+    );
   }
   ReactDOM.render(<ClickMe />, document.body);
   ```
@@ -448,8 +448,4 @@ function App() {
 }
 
 export default App;
-```
-
-```
-
 ```
