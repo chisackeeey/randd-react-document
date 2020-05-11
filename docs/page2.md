@@ -175,18 +175,6 @@ const add = function add(x, y) {
 add(1, 2); // 3
 ```
 
-- 関数を変数に格納することもできる
-
-```jsx
-// 関数の定義
-const add = function add(x, y) {
-  return x + y;
-};
-
-// 変数に入れた場合も同じように呼び出せる
-add(1, 2); // 3
-```
-
 - 変数に入れる場合は`function`の後ろの関数名を省略しても同様の動きとなる
 
 ```jsx
